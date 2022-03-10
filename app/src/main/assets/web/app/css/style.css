@@ -241,6 +241,11 @@ ul {
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
+.overflow-touch2 {
+	overflow: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
 .no-search {
 	height: calc(100% - 50px);
 }

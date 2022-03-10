@@ -166,6 +166,7 @@ define(["vue", "MINT", "Common", "Util", "txt!../../pages/index.html", "../js/fo
                 } else {
                     this.loadMoreing = true;
                 }
+//                self.$refs.loadmore.onBottomLoaded();
             },
             addDevice: function (event) {
                 Common.addDevice(this);

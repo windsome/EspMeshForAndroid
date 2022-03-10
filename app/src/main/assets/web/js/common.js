@@ -10,6 +10,7 @@ define(function(){
         // 设置分页
         setPages: function(self, list, id) {
             var height = self.$store.state.winHeight;
+//            var num = 100;
             var num = Math.floor((height / 90)) * 3;
             if (parseInt(num) == 0) {
                 num = 9;

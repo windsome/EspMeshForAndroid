@@ -43,7 +43,7 @@ define(["vue", "MINT", "Util", "txt!../../pages/setDevicePair.html"],
                 window.onDevicePairEdit = self.onDevicePairEdit;
                 var position = self.deviceInfo.position;
                 if (!Util._isEmpty(position)) {
-                    position = position.split("-");
+                    position = position.split(" ");
                     self.oldFloor = self.floor = position[0];
                     self.oldArea = self.area = position[1];
                     self.oldCode = self.serialNum = position[2];
@@ -175,7 +175,7 @@ define(["vue", "MINT", "Util", "txt!../../pages/setDevicePair.html"],
             },
             setDevicePosition: function(fun) {
                 var self = this, flag = false;
-                    position = self.floor + "-" + self.area + "-" + self.serialNum,
+                    position = self.floor + " " + self.area + " " + self.serialNum,
                     data = '{"' + MESH_MAC + '": "' + self.deviceInfo.mac +
                         '","'+DEVICE_IP+'": "'+self.$store.state.deviceIp+'","' + MESH_REQUEST + '": "' + SET_POSITION + '",' +
                         '"position":"' + position + '", "callback": "'+fun+'"}';
@@ -237,7 +237,7 @@ define(["vue", "MINT", "Util", "txt!../../pages/setDevicePair.html"],
             },
             onDevicePairSave: function(res) {
                 var  self = this,
-                    position = self.floor + "-" + self.area + "-" + self.serialNum;
+                    position = self.floor + " " + self.area + " " + self.serialNum;
                 res = JSON.parse(res).result;
                 if (!Util._isEmpty(res.status_code) && res.status_code == 0) {
                     self.deviceInfo.position = position;
@@ -260,7 +260,7 @@ define(["vue", "MINT", "Util", "txt!../../pages/setDevicePair.html"],
             },
             onDevicePairEdit: function(res) {
                 var  self = this,
-                    position = self.floor + "-" + self.area + "-" + self.serialNum;
+                    position = self.floor + " " + self.area + " " + self.serialNum;
                     console.log(res);
                 res = JSON.parse(res).result;
                 if (!Util._isEmpty(res) && res.status_code == 0) {

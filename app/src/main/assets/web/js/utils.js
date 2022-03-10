@@ -403,8 +403,8 @@ define(function(){
         },
         getPosition: function(position) {
             if (!this._isEmpty(position)) {
-                position = position.split("-");
-                return position[0] + "-" + (position[1] + "-" + position[2]);
+                position = position.split(" ");
+                return position[0] + " " + (position[1] + " " + position[2]);
             } else {
                 return "";
             }
@@ -636,7 +636,7 @@ define(function(){
             if (staMac.length > 0) {
                 $.each(self.resetPairList, function(i, item) {
                     if (item.mac == staMac[0]) {
-                        position = item.floor + "-" + item.area + "-" + item.code;
+                        position = item.floor + " " + item.area + " " + item.code;
                         return false;
                     }
                 });
